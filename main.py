@@ -4,9 +4,9 @@ from MainScreen import screen as ms
 from screenhandler import ScreenHandler
 
 class MainWindow():
+    
     def __init__(self, master):
         self.main_window = Frame(master)
-
         self.main_window.pack(fill="both", expand=True)
         self.main_window.grid_rowconfigure(0, weight=1)
         self.main_window.grid_columnconfigure(0, weight=1)
@@ -21,6 +21,7 @@ class MainWindow():
             
 
 class App(Tk):
+    
     def __init__(self):
         super().__init__()
 

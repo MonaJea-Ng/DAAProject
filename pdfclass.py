@@ -2,6 +2,7 @@ import PyPDF2
 import threading
 
 class PDF():
+    
     def __init__(self, file_path, file_name):
         self.file_path = file_path
         self.file_name = file_name
@@ -10,6 +11,7 @@ class PDF():
 
         self.included = True
 
+    # pdf to text conversion
     def convert_to_text(self, file_path):
         pdf_file = open(file_path, 'rb')
         pdf_reader = PyPDF2.PdfReader(pdf_file)

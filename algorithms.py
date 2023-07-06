@@ -1,6 +1,9 @@
 NO_OF_CHARACTERS = 256
 
+# boyer-moore algorithm to filter resumes
 class Algorithms():
+    
+    # bad character heuristic to find bad character
     def badCharacterHeuristic(string, length):
         bad_char = [-1]*NO_OF_CHARACTERS
         
@@ -8,8 +11,10 @@ class Algorithms():
             bad_char[ord(string[i])] = i
 
         return bad_char
-
+    
+    # comparing text and pattern to check the boolean value 
     def search(text, pattern):
+        
         text = text.lower()
         pattern = pattern.lower()
         
@@ -19,6 +24,7 @@ class Algorithms():
         bad_char_table = Algorithms.badCharacterHeuristic(pattern, length_of_pattern)
         shift = 0
 
+        # checking 
         while (shift <= length_of_text - length_of_pattern):
             current_index = length_of_pattern - 1
 
@@ -33,6 +39,7 @@ class Algorithms():
         
         return False
     
+    # split keywords
     def split_keywords(string):
         if not string:
             return []
